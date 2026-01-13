@@ -1,0 +1,13 @@
+<turbo-stream action="append" target="players-list">
+  <template>
+    <%= render partial: "players/player",
+               formats: [:html],
+               locals: { player: @player } %>
+  </template>
+</turbo-stream>
+
+<turbo-stream action="replace" target="player-form">
+  <template>
+    <%= link_to "Add Player", new_player_path %>
+  </template>
+</turbo-stream>

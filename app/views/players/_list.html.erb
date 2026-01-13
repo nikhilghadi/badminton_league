@@ -1,0 +1,7 @@
+<h2>All Players</h2>
+
+<ul id="players-list">
+  <% @players.each do |player| %>
+    <%= render "player", player: player %>
+  <% end %>
+</ul>

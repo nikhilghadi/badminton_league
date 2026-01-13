@@ -1,0 +1,11 @@
+<h1> Players </h1>
+
+<turbo-frame id="player-form">
+  <%= link_to "Add Player", new_player_path %>
+</turbo-frame>
+
+<turbo-frame id='players-section'>
+<%= render 'list' %>
+</turbo-frame>
+
+<%= link_to "Back", root_path %>
