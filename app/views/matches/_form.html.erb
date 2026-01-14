@@ -1,0 +1,33 @@
+<%= form_with model: @match do |f| %>
+
+  <% if @match.errors.any? %>
+    <div class="errors">
+      <h3><%= pluralize(@match.errors.count, "error") %> prohibited this match from being saved:</h3>
+      <ul>
+        <% @match.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :winner_id, "Winner" %>
+    
+    <%= f.collection_select :winner_id, @players, :id, :name,   { prompt: "Select winner" },
+        { required: true } %>
+  </div>
+
+  <div>
+    <%= f.label :loser_id, "Loser" %>
+    <%= f.collection_select :loser_id, @players, :id, :name,  { prompt: "Select loser" },
+        { required: true } %>
+  </div>
+
+  <%= f.submit "Record Match" %>
+<% end %>

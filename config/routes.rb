@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "dashboard#index"
   resources :players, only: [:index, :create, :new]
+  resources :matches, only: [:index, :create, :new]
+
 end

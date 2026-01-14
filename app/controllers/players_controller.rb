@@ -13,6 +13,7 @@ class PlayersController < ApplicationController
     @players = Player.all
 
     if @player.save
+      flash.now[:notice] = "Player successfully created"
       respond_to do |format|
         format.turbo_stream
         format.html { redirect_to players_path }

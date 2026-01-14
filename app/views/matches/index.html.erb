@@ -1,0 +1,11 @@
+<h1> Matches </h1>
+
+<turbo-frame id="match-form">
+  <%= link_to "Add Match", new_match_path %>
+</turbo-frame>
+
+<turbo-frame id='matches-section'>
+<%= render 'list' %>
+</turbo-frame>
+
+<%= link_to "Back", root_path %>

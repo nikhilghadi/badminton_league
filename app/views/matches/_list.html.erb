@@ -1,0 +1,7 @@
+<h2>All Matches</h2>
+
+<ul id="matches-list">
+  <% @matches.each do |match| %>
+    <%= render "match", match: match %>
+  <% end %>
+</ul>

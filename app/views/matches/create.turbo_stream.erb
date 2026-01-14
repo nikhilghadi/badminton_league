@@ -1,14 +1,14 @@
-<turbo-stream action="append" target="players-list">
+<turbo-stream action="append" target="matches-list">
   <template>
-    <%= render partial: "players/player",
+    <%= render partial: "matches/match",
                formats: [:html],
-               locals: { player: @player } %>
+               locals: { match: @match } %>
   </template>
 </turbo-stream>
 
-<turbo-stream action="replace" target="player-form">
+<turbo-stream action="replace" target="match-form">
   <template>
-    <%= link_to "Add Player", new_player_path %>
+    <%= link_to "Add Match", new_match_path %>
   </template>
 </turbo-stream>
 
