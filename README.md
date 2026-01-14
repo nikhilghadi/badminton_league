@@ -2,25 +2,9 @@
 Basic web application to manage a badminton league
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Design Decisions
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Wins and losses are fetched from matches table to avoid data inconsistency.
+- Leaderboard is implemented using a single SQL query to avoid N+1 issue.
+- Hotwire (Turbo Frames & Streams) is used instead of custom JavaScript.
+- Players cannot be deleted if they have participated in matches.
