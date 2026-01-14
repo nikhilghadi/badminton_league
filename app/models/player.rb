@@ -5,4 +5,9 @@ class Player < ApplicationRecord
   def matches
     Match.where('winner_id = ? OR loser_id = ?', id, id)
   end
+
+  def is_deletable?
+    matches.count.zero?
+  end
+  
 end

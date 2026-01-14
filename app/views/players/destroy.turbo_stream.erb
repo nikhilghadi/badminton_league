@@ -1,0 +1,13 @@
+<% if @player.destroyed? %>
+  <turbo-stream action="remove" target="<%= dom_id(@player) %>"></turbo-stream>
+<% end %>
+
+<turbo-stream action="replace" target="flash">
+  <template>
+    <% flash.each do |type, message| %>
+      <div class="flash <%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
+  </template>
+</turbo-stream>
